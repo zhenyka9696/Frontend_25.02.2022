@@ -1,0 +1,632 @@
+git remote add origin 
+https://zhenyka9696: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@github.com/zhenyka9696/Frontend_25.02.2022.git
+////////////////////////////////////////////////////////////////////
+
+гк@PC12-CAB3 MINGW64 ~
+$ cd "d/гк"
+bash: cd: d/гк: No such file or directory
+
+гк@PC12-CAB3 MINGW64 ~
+$ cd "d:/гк"
+
+гк@PC12-CAB3 MINGW64 /d/гк
+$ mkdir "sample"
+
+гк@PC12-CAB3 MINGW64 /d/гк
+$ git init
+Initialized empty Git repository in D:/гк/.git/
+
+гк@PC12-CAB3 MINGW64 /d/гк (master)
+$ echo "a">file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк (master)
+$ cd "sample"
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git init
+Initialized empty Git repository in D:/гк/sample/.git/
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ echo "a">file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ cat file.tx
+cat: file.tx: No such file or directory
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ cat file.txt
+a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git add .
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file.txt
+
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git commit -m a
+[master (root-commit) fa05c28] a
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git ls-files
+file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ echo "b" > file.txt
+            git commit -a -m "b"
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$             cat file.txt
+b
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$             git commit -a -m "b"
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 7b12c7c] b
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$             git commit -a -m "c"
+echo "c" > file.txt
+            git reflog
+            gitk
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$             cat file.txt
+c
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$             git commit -a -m "c"
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 4d3532e] c
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$             git reflog
+4d3532e (HEAD -> master) HEAD@{0}: commit: c
+7b12c7c HEAD@{1}: commit: b
+fa05c28 HEAD@{2}: commit (initial): a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$             gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git checkout
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git 7b12c7c
+git: '7b12c7c' is not a git command. See 'git --help'.
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample (master)
+$ git checkout 7b12c7c
+Note: switching to '7b12c7c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 7b12c7c b
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((7b12c7c...))
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((7b12c7c...))
+$ git reflog
+7b12c7c (HEAD) HEAD@{0}: checkout: moving from master to 7b12c7c
+4d3532e (master) HEAD@{1}: commit: c
+7b12c7c (HEAD) HEAD@{2}: commit: b
+fa05c28 HEAD@{3}: commit (initial): a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((7b12c7c...))
+$ git reset
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((7b12c7c...))
+$ git reflog
+7b12c7c (HEAD) HEAD@{0}: checkout: moving from master to 7b12c7c
+4d3532e (master) HEAD@{1}: commit: c
+7b12c7c (HEAD) HEAD@{2}: commit: b
+fa05c28 HEAD@{3}: commit (initial): a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((7b12c7c...))
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((7b12c7c...))
+$ git reset --hard
+HEAD is now at 7b12c7c b
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((7b12c7c...))
+$ git checkout 4d3532e
+Previous HEAD position was 7b12c7c b
+HEAD is now at 4d3532e c
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((4d3532e...))
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((4d3532e...))
+$ mkdir "sample2"
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample ((4d3532e...))
+$ cd sample2
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((4d3532e...))
+$ git init
+Initialized empty Git repository in D:/гк/sample/sample2/.git/
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$    echo "a" > file.txt
+            git commit -m "a"
+            git ls-files
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             cat file.txt
+a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git add file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file.txt
+
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git commit -m "a"
+[master (root-commit) 6fb90db] a
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git ls-files
+file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ echo "b" > file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             cat file.txt
+b
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git commit -a -m "b"
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 9953876] b
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ echo "a" > file.txt
+            git add file.txt
+            git status
+            git commit -m "a"
+            git ls-files
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             cat file.txt
+a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git add file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git commit -m "a"
+[master d675c75] a
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git ls-files
+file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git commit -a -m "c"
+echo "c" > file.txt
+            git reflog
+            gitk
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             cat file.txt
+c
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git commit -a -m "c"
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master c427c65] c
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git reflog
+c427c65 (HEAD -> master) HEAD@{0}: commit: c
+d675c75 HEAD@{1}: commit: a
+9953876 HEAD@{2}: commit: b
+6fb90db HEAD@{3}: commit (initial): a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ ^?echo "d" > file.txt
+            git commit -a -m "d"
+            git reflogbash: $'\177echo': command not found
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             cat file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git commit -a -m "d"
+[master eb19a4c] d
+ 1 file changed, 1 deletion(-)
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$             git reflog
+eb19a4c (HEAD -> master) HEAD@{0}: commit: d
+c427c65 HEAD@{1}: commit: c
+d675c75 HEAD@{2}: commit: a
+9953876 HEAD@{3}: commit: b
+6fb90db HEAD@{4}: commit (initial): a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ git checkout 6fb90db
+Note: switching to '6fb90db'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 6fb90db a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((6fb90db...))
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((6fb90db...))
+$ cat file.txt
+a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((6fb90db...))
+$ git branch little_feature
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((6fb90db...))
+$ git branch
+* (HEAD detached at 6fb90db)
+  little_feature
+  master
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((6fb90db...))
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((6fb90db...))
+$ echo  echo "lf" > file.txt
+            git commit -a -m "lf"
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((6fb90db...))
+$             cat file.txt
+echo lf
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((6fb90db...))
+$             git commit -a -m "lf"
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[detached HEAD 88b5b8e] lf
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((88b5b8e...))
+$ git reflog
+88b5b8e (HEAD) HEAD@{0}: commit: lf
+6fb90db (little_feature) HEAD@{1}: checkout: moving from master to 6fb90db
+eb19a4c (master) HEAD@{2}: commit: d
+c427c65 HEAD@{3}: commit: c
+d675c75 HEAD@{4}: commit: a
+9953876 HEAD@{5}: commit: b
+6fb90db (little_feature) HEAD@{6}: commit (initial): a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((88b5b8e...))
+$ git checkout c427c65
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  88b5b8e lf
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 88b5b8e
+
+HEAD is now at c427c65 c
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((c427c65...))
+$ git branche big_feature
+git: 'branche' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((c427c65...))
+$ git branch big_feature
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((c427c65...))
+$ cat file.txt
+c
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((c427c65...))
+$ git branch big_feature
+fatal: A branch named 'big_feature' already exists.
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((c427c65...))
+$ echo bf file.txt
+bf file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((c427c65...))
+$ cat file.txt
+c
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((c427c65...))
+$ echo "bf" > file.txt
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((c427c65...))
+$ git commit -a -m "bf"
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[detached HEAD 83ac190] bf
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((83ac190...))
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((83ac190...))
+$ cat file.txt
+bf
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((83ac190...))
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 ((83ac190...))
+$ git checkout master
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  83ac190 bf
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 83ac190
+
+Switched to branch 'master'
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ git reflog
+eb19a4c (HEAD -> master) HEAD@{0}: checkout: moving from 83ac1906c6c01f39ef0f0a33cf19e5e6b247ef20 to master
+83ac190 HEAD@{1}: commit: bf
+c427c65 (big_feature) HEAD@{2}: checkout: moving from 88b5b8e5ba45e06e6e1c65111356074162f129b5 to c427c65
+88b5b8e HEAD@{3}: commit: lf
+6fb90db (little_feature) HEAD@{4}: checkout: moving from master to 6fb90db
+eb19a4c (HEAD -> master) HEAD@{5}: commit: d
+c427c65 (big_feature) HEAD@{6}: commit: c
+d675c75 HEAD@{7}: commit: a
+9953876 HEAD@{8}: commit: b
+6fb90db (little_feature) HEAD@{9}: commit (initial): a
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ git checkout master
+Already on 'master'
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ git merge 88b5b8e
+Auto-merging file.txt
+CONFLICT (content): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master|MERGING)
+$ cat fil.txt
+cat: fil.txt: No such file or directory
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master|MERGING)
+$ cat file.txt
+<<<<<<< HEAD
+=======
+echo lf
+>>>>>>> 88b5b8e
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master|MERGING)
+$ git commit -a -a "v1.0"
+fatal: paths 'v1.0 ...' with -a does not make sense
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master|MERGING)
+$ git commit -a -m "v1.0"
+[master c6f3940] v1.0
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ cat file.txt
+<<<<<<< HEAD
+=======
+echo lf
+>>>>>>> 88b5b8e
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ gitk
+
+гк@PC12-CAB3 MINGW64 /d/гк/sample/sample2 (master)
+$ cd "D:\гк\Visual_studio"
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git init
+Initialized empty Git repository in D:/гк/Visual_studio/.git/
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        branch.html
+        css/
+        images/
+        index.html
+        reset.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git add .
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   branch.html
+        new file:   css/style.css
+        new file:   css/w3.css
+        new file:   images/shema1.png
+        new file:   images/shema2.png
+        new file:   index.html
+        new file:   reset.html
+
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git commit -m "web pages"
+[master (root-commit) 7e32e88] web pages
+ 7 files changed, 491 insertions(+)
+ create mode 100644 branch.html
+ create mode 100644 css/style.css
+ create mode 100644 css/w3.css
+ create mode 100644 images/shema1.png
+ create mode 100644 images/shema2.png
+ create mode 100644 index.html
+ create mode 100644 reset.html
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git config --global user.name
+zhenyka9696
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ https://zhenyka9696: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@github.com/zhenyka9696/Frontend_25.02.2022.git
+bash: https://zhenyka9696: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@github.com/zhenyka9696/Frontend_25.02.2022.git: No such file or directory
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git remote add origin
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ https://zhenyka9696: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@github.com/zhenyka9696/Frontend_25.02.2022.git
+bash: https://zhenyka9696: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@github.com/zhenyka9696/Frontend_25.02.2022.git: No such file or directory
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git remote add origin
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git remote add origin https://zhenyka9696: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@github.com/zhenyka9696/Frontend_25.02.2022.git
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$ git push --set-upstream origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 87.54 KiB | 17.51 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/zhenyka9696/Frontend_25.02.2022.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+гк@PC12-CAB3 MINGW64 /d/гк/Visual_studio (master)
+$
+
