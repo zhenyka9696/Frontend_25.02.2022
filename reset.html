@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25.02.2022</title>
+    <link rel="stylesheet" href="css/w3.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="w3-bar w3-black">
+        <a href="index.html" class="w3-bar-item w3-button">Home</a>
+        <a href="reset.html" class="w3-bar-item w3-button">Reset</a>
+        <a href="branch.html" class="w3-bar-item w3-button">Branch</a>
+      </div>
+    </nav>
+    <main>
+      <div class="wrapper w3-container">
+        <img src="images/shema1.png" />
+      </div>
+      <div class="container">
+        <ul class="w3-ul w3-border">
+         <li>Создать каталог и в нем репозиторий</li>
+        <pre>
+            cd "dstep/github"
+            mkdir "d😕step/github/sample3"
+            cd "d😕step/github/sample3"
+            git init            
+        </pre>
+        <li>Создать файл с содержимым и создать коммит "a"</li>
+        <pre>           
+            echo "a" > file.txt
+            cat file.txt
+            git add file.txt
+            git status
+            git commit -m "a"
+            git ls-files
+        </pre>
+        <li>Изменить файл и создать коммит "b"</li>
+        <pre>           
+            echo "b" > file.txt
+            cat file.txt            
+            git commit -a -m "b"            
+        </pre>
+        <li>Изменить файл и создать коммит "c"</li>
+        <pre>           
+            echo "c" > file.txt
+            cat file.txt            
+            git commit -a -m "c"
+            git reflog
+            gitk            
+        </pre>
+        <li>Переключиться на коммит "b". Получить состояние открепленного указателя HEAD</li>
+        <pre>           
+            git checkout 1435fe1 
+            git reflog
+            gitk            
+        </pre>
+        <li>Переключить указатель ветки на заданный коммит "b".</li>
+        <pre>           
+            git reset
+            git reflog
+            gitk            
+        </pre>
+        </ul>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
